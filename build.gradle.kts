@@ -7,7 +7,10 @@ plugins {
 }
 
 subprojects {
+
     apply(plugin = "org.jlleitschuh.gradle.ktlint")
+
+    apply(from = "$rootDir/sdkversions.gradle.kts")
 
     configure<org.jlleitschuh.gradle.ktlint.KtlintExtension> {
         version.set("0.45.2")
