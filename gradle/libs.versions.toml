@@ -19,6 +19,7 @@ koin = { module = "io.insert-koin:koin-android", version.ref = "koin" }
 
 [bundles]
 retrofit = ["retrofit", "moshi-converter"]
+moshi = ["moshi", "moshi-codegen"]
 
 [plugins]
 ksp = { id = "com.google.devtools.ksp", version.ref = "ksp" }
