@@ -1,14 +1,7 @@
-import java.io.FileInputStream
-import java.util.*
-
 plugins {
     id("com.android.library")
     id("org.jetbrains.kotlin.android")
 }
-
-val fis = FileInputStream("apikey.properties")
-val prop = Properties()
-prop.load(fis)
 
 android {
 
@@ -20,8 +13,6 @@ android {
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles("consumer-rules.pro")
-
-        buildConfigField("String", "API_KEY", prop.getProperty("API_KEY"))
     }
 
     buildTypes {
@@ -43,5 +34,14 @@ dependencies {
 
     testImplementation("junit:junit:4.13.2")
 
-    api(deps.retrofit)
+    api(deps.bundles.retrofit)
+    api(deps.moshi)
+
+    implementation(project(":app-core"))
+
+    implementation(enforcedPlatform("com.squareup.okhttp3:okhttp-bom:4.10.0"))
+    implementation("com.squareup.okhttp3:okhttp")
+    implementation("com.squareup.okhttp3:logging-interceptor")
+
+    implementation(deps.moshi.codegen)
 }
