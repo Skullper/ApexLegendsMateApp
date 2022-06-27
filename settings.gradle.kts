@@ -9,6 +9,7 @@ pluginManagement {
 enableFeaturePreview("VERSION_CATALOGS")
 
 dependencyResolutionManagement {
+    defaultLibrariesExtensionName.set("deps")
     repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
     repositories {
         google()
@@ -21,3 +22,5 @@ rootProject.name = "ApexLegendsMateApp"
 include(":app")
 include(":network-utils")
 include(":ui-theme")
+include(":app-core")
+include(":mozambique-api")

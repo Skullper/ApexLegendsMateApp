@@ -3,9 +3,11 @@ retrofit = "2.9.0"
 androidx-core = "1.8.0"
 material = "1.6.1"
 appcompat = "1.4.2"
+koin = "3.2.0"
 
 [libraries]
 retrofit = { module = "com.squareup.retrofit2:retrofit", version.ref = "retrofit"}
 androidx-core = { module = "androidx.core:core-ktx", version.ref = "androidx-core" }
 appcompat = { module = "androidx.appcompat:appcompat", version.ref = "appcompat" }
 material = { module = "com.google.android.material:material", version.ref = "material" }
+koin = { module = "io.insert-koin:koin-android", version.ref = "koin" }

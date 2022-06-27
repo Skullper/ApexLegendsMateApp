@@ -1,7 +1,14 @@
+import java.io.FileInputStream
+import java.util.*
+
 plugins {
     id("com.android.library")
     id("org.jetbrains.kotlin.android")
 }
+
+val fis = FileInputStream("apikey.properties")
+val prop = Properties()
+prop.load(fis)
 
 android {
 
@@ -13,6 +20,8 @@ android {
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles("consumer-rules.pro")
+
+        buildConfigField("String", "API_KEY", prop.getProperty("API_KEY"))
     }
 
     buildTypes {
@@ -34,5 +43,5 @@ dependencies {
 
     testImplementation("junit:junit:4.13.2")
 
-    implementation(libs.retrofit)
+    api(deps.retrofit)
 }
