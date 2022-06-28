@@ -1,4 +1,4 @@
-package com.skullper.mozambique_api.player
+package com.skullper.mozambique_api.data.player
 
 import com.squareup.moshi.Json
 

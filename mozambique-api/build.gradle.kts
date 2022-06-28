@@ -4,7 +4,6 @@ import java.util.*
 plugins {
     id("com.android.library")
     id("org.jetbrains.kotlin.android")
-    id("com.google.devtools.ksp")
 }
 
 val fis = FileInputStream("apikey.properties")
