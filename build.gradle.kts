@@ -28,7 +28,7 @@ subprojects {
                 element.file.path.contains("libs/")
             }
         }
-        disabledRules.set(setOf("no-wildcard-imports", "import-ordering"))
+        disabledRules.set(setOf("no-wildcard-imports", "import-ordering", "comment-spacing"))
         reporters {
             reporter(org.jlleitschuh.gradle.ktlint.reporter.ReporterType.CHECKSTYLE)
         }

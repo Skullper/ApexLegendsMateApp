@@ -4,6 +4,7 @@ import java.util.*
 plugins {
     id("com.android.library")
     id("org.jetbrains.kotlin.android")
+    id("com.google.devtools.ksp")
 }
 
 val fis = FileInputStream("apikey.properties")
@@ -42,6 +43,8 @@ android {
 dependencies {
 
     testImplementation("junit:junit:4.13.2")
+
+    ksp(deps.moshi.codegen)
 
     implementation(project(":network-utils"))
     implementation(project(":app-core"))

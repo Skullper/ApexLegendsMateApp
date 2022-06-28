@@ -13,7 +13,7 @@ data class Global(
     val level: Int,
     val name: String,
     val platform: String,
-    val playerRank: PlayerRank,
+    val rank: PlayerRank,
     val toNextLevelPercent: Int,
     val uid: Long
 )
