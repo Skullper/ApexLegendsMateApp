@@ -1,9 +1,9 @@
 package com.skullper.mozambique_api
 
 import android.util.Log
-import com.skullper.mozambique_api.player.Platform
+import com.skullper.mozambique_api.data.player.Platform
+import com.skullper.mozambique_api.response.player.PlayerInfo
 import com.skullper.network_utils.ServiceBuilder
-import okhttp3.ResponseBody
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -16,17 +16,18 @@ class MozambiqueApiHelper(serviceBuilder: ServiceBuilder) {
         playerName: String,
         platform: Platform = Platform.PC
     ) {
-        api.getPlayerProfile(playerName, platform)
-            .enqueue(object : Callback<ResponseBody> {
+        api
+            .getPlayerProfile(playerName, platform)
+            .enqueue(object : Callback<PlayerInfo> {
                 override fun onResponse(
-                    call: Call<ResponseBody>,
-                    response: Response<ResponseBody>
+                    call: Call<PlayerInfo>,
+                    response: Response<PlayerInfo>
                 ) {
                     Log.e("TAGA", "Result: ${response.isSuccessful}")
                 }
 
                 override fun onFailure(
-                    call: Call<ResponseBody>,
+                    call: Call<PlayerInfo>,
                     t: Throwable
                 ) {
                     Log.e("TAGA", "Failure", t)

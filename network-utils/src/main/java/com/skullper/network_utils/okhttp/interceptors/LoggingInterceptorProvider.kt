@@ -7,7 +7,7 @@ internal class LoggingInterceptorProvider {
 
     fun provide(): HttpLoggingInterceptor {
         val interceptor = HttpLoggingInterceptor { message ->
-            Log.e("HTTP", message)
+            Log.i("HTTP", message)
         }
         interceptor.level = HttpLoggingInterceptor.Level.BODY
         interceptor.redactHeader("Authorization")

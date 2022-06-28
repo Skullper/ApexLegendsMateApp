@@ -1,6 +1,7 @@
 package com.skullper.network_utils.di
 
 import com.skullper.network_utils.ServiceBuilder
+import com.skullper.network_utils.moshi.MoshiBuilder
 import com.skullper.network_utils.okhttp.HttpClientProvider
 import com.skullper.network_utils.okhttp.interceptors.AuthorizationHeaderInterceptorProvider
 import com.skullper.network_utils.okhttp.interceptors.LoggingInterceptorProvider
@@ -13,6 +14,7 @@ val networkModule = module {
     factoryOf(::AuthorizationHeaderInterceptorProvider)
     factoryOf(::LoggingInterceptorProvider)
     factoryOf(::HttpClientProvider)
+    factoryOf(::MoshiBuilder)
 
     singleOf(::ServiceBuilder)
 }
