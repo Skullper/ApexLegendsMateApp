@@ -22,5 +22,4 @@ rootProject.name = "ApexLegendsMateApp"
 include(":app")
 include(":network-utils")
 include(":ui-theme")
-include(":app-core")
 include(":mozambique-api")

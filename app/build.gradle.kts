@@ -37,7 +37,6 @@ android {
 
 dependencies {
 
-    implementation(project(":app-core"))
     implementation(project(":mozambique-api"))
 
     implementation(deps.androidx.core)
