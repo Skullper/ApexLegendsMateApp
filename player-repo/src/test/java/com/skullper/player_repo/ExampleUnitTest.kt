@@ -1,4 +1,4 @@
-package com.skullper.app_core
+package com.skullper.player_repo
 
 import org.junit.Assert.assertEquals
 import org.junit.Test

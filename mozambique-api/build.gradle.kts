@@ -47,5 +47,4 @@ dependencies {
     ksp(deps.moshi.codegen)
 
     implementation(project(":network-utils"))
-    implementation(project(":app-core"))
 }

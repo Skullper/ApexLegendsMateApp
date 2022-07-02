@@ -33,5 +33,6 @@ dependencies {
 
     testImplementation("junit:junit:4.13.2")
 
-//    api(deps.koin)
+    // TODO(02.07.2022) Create a UI copy of PlayerInfo model 
+    api(project(":mozambique-api"))
 }

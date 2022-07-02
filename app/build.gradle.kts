@@ -37,7 +37,7 @@ android {
 
 dependencies {
 
-    implementation(project(":mozambique-api"))
+    implementation(project(":player-repo"))
 
     implementation(deps.androidx.core)
     implementation(deps.appcompat)

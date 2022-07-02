@@ -1,17 +1,19 @@
 package com.skullper.apexlegendsmateapp
 
 import android.os.Bundle
+import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.WindowCompat
 import com.skullper.apexlegendsmateapp.databinding.ActivityMainBinding
-import com.skullper.mozambique_api.MozambiqueApiHelper
+import com.skullper.player_repo.PlayerRepository
+import kotlinx.coroutines.runBlocking
 import org.koin.android.ext.android.inject
 
 class MainActivity : AppCompatActivity() {
 
-    private val apiHelper: MozambiqueApiHelper by inject()
+    private val apiHelper: PlayerRepository by inject()
 
     private lateinit var binding: ActivityMainBinding
 
@@ -25,7 +27,10 @@ class MainActivity : AppCompatActivity() {
         setSupportActionBar(binding.toolbar)
 
         binding.fab.setOnClickListener { _ ->
-            apiHelper.getPlayerInfo("SkuIIper")
+            runBlocking {
+                val player = apiHelper.getPlayerInfo("SkuIIper")
+                Log.e("TAGA", "Player name: ${player.global.name}")
+            }
         }
     }
 
