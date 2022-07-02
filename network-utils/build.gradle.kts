@@ -32,8 +32,6 @@ android {
 
 dependencies {
 
-    testImplementation("junit:junit:4.13.2")
-
     api(deps.bundles.retrofit)
     api(deps.moshi)
 

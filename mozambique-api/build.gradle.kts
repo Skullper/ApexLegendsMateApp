@@ -42,8 +42,6 @@ android {
 
 dependencies {
 
-    testImplementation("junit:junit:4.13.2")
-
     ksp(deps.moshi.codegen)
 
     implementation(project(":network-utils"))

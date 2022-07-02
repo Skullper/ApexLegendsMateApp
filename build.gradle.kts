@@ -38,7 +38,9 @@ subprojects {
     afterEvaluate {
         dependencies {
             val implementation by configurations
+            val testImplementation by configurations
 
+            testImplementation(deps.junit)
             implementation(deps.koin)
         }
     }

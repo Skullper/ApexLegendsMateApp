@@ -1,6 +1,7 @@
 plugins {
     id("com.android.library")
     id("org.jetbrains.kotlin.android")
+    id("com.google.devtools.ksp")
 }
 
 android {
@@ -31,8 +32,12 @@ android {
 
 dependencies {
 
-    testImplementation("junit:junit:4.13.2")
+    testImplementation(deps.room.tests)
 
-    // TODO(02.07.2022) Create a UI copy of PlayerInfo model 
+    // TODO(02.07.2022) Create a UI copy of PlayerInfo model
     api(project(":mozambique-api"))
+
+    implementation(deps.bundles.room)
+    annotationProcessor(deps.room.compiler)
+    ksp(deps.room.compiler)
 }

@@ -10,6 +10,7 @@ appcompat = "1.4.2"
 koin = "3.2.0"
 moshi = "1.13.0"
 ksp = "1.7.0-1.0.6"
+room = "2.4.2"
 
 [libraries]
 retrofit = { module = "com.squareup.retrofit2:retrofit", version.ref = "retrofit" }
@@ -20,10 +21,17 @@ androidx-core = { module = "androidx.core:core-ktx", version.ref = "androidx-cor
 appcompat = { module = "androidx.appcompat:appcompat", version.ref = "appcompat" }
 material = { module = "com.google.android.material:material", version.ref = "material" }
 koin = { module = "io.insert-koin:koin-android", version.ref = "koin" }
+room = { module = "androidx.room:room-runtime", version.ref = "room" }
+room-compiler = { module = "androidx.room:room-compiler", version.ref = "room" }
+room-ktx = { module = "androidx.room:room-ktx", version.ref = "room" }
+room-tests = { module = "androidx.room:room-testing", version.ref = "room" }
+# tests
+junit = "junit:junit:4.13.2"
 
 [bundles]
 retrofit = ["retrofit", "moshi-converter"]
 moshi = ["moshi", "moshi-codegen"]
+room = ["room", "room-ktx"]
 
 [plugins]
 ksp = { id = "com.google.devtools.ksp", version.ref = "ksp" }
