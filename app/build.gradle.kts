@@ -5,12 +5,12 @@ plugins {
 
 android {
 
-    compileSdk = extra["targetSdkVer"] as Int?
+    compileSdk = deps.versions.targetSdk.get().toInt()
 
     defaultConfig {
         applicationId = "com.skullper.apexlegendsmateapp"
-        minSdk = extra["minSdkVer"] as Int?
-        targetSdk = extra["targetSdkVer"] as Int?
+        minSdk = deps.versions.minSdk.get().toInt()
+        targetSdk = deps.versions.targetSdk.get().toInt()
         versionCode = 1
         versionName = "1.0"
 

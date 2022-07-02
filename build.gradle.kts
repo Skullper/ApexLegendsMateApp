@@ -6,14 +6,14 @@ plugins {
     id("org.jlleitschuh.gradle.ktlint") version "10.3.0" apply false
     id("org.jetbrains.kotlin.jvm") version "1.7.0" apply false
     id("com.google.devtools.ksp") version "1.7.0-1.0.6" apply false //required for moshi
+    id("com.github.ben-manes.versions") version "0.42.0"
+    id("nl.littlerobots.version-catalog-update") version "0.5.1"
 //    id("com.gitlab.stfs.gradle.dependency-graph-plugin") version "0.4"
 }
 
 subprojects {
 
     apply(plugin = "org.jlleitschuh.gradle.ktlint")
-
-    apply(from = "$rootDir/sdkversions.gradle.kts")
 
     configure<org.jlleitschuh.gradle.ktlint.KtlintExtension> {
         version.set("0.45.2")
@@ -37,4 +37,8 @@ subprojects {
 
 tasks.register("clean", Delete::class) {
     delete(rootProject.buildDir)
+}
+
+versionCatalogUpdate {
+    sortByKey.set(false)
 }
