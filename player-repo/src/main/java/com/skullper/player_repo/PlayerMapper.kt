@@ -49,14 +49,14 @@ internal class PlayerMapper {
 
     private fun getPlayerStatus(origin: Realtime): PlayerStatusDTO = with(origin) {
         PlayerStatusDTO(
-            canJoin,
+            canJoin.toBoolean(),
             currentState,
             currentStateAsText,
             currentStateSinceTimestamp,
-            isInGame,
-            isOnline,
+            isInGame.toBoolean(),
+            isOnline.toBoolean(),
             lobbyState,
-            partyFull,
+            partyFull.toBoolean(),
             selectedLegend
         )
     }
@@ -177,4 +177,6 @@ internal class PlayerMapper {
     private fun getLegendPlatformSpecificRank(origin: RankPlatformSpecific): PlatformSpecificRankDTO = with(origin) {
         PlatformSpecificRankDTO(rankPos, topPercent)
     }
+
+    private fun Int.toBoolean() = this == 1
 }

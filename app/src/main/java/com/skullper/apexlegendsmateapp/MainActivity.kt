@@ -29,7 +29,7 @@ class MainActivity : AppCompatActivity() {
         binding.fab.setOnClickListener { _ ->
             runBlocking {
                 val player = apiHelper.getPlayerInfo("SkuIIper")
-                Log.e("TAGA", "Player name: ${player.data.name}")
+                Log.e("TAGA", "Player name: ${player.data.name} | Status: ${player.status.isOnline}")
                 Log.e("TAGA", "SelectedLegend: ${player.legends.find { it.selected != null }}")
             }
         }
