@@ -12,7 +12,7 @@ data class All(
     @Json(name = "Crypto") val crypto: Crypto,
     @Json(name = "Fuse") val fuse: Fuse,
     @Json(name = "Gibraltar") val gibraltar: Gibraltar,
-    @Json(name = "Global") val global: GlobalX,
+    @Json(name = "Global") val global: GlobalX, //???
     @Json(name = "Horizon") val horizon: Horizon,
     @Json(name = "Lifeline") val lifeline: Lifeline,
     @Json(name = "Loba") val loba: Loba,
@@ -27,4 +27,32 @@ data class All(
     @Json(name = "Valkyrie") val valkyrie: Valkyrie,
     @Json(name = "Wattson") val wattson: Wattson,
     @Json(name = "Wraith") val wraith: Wraith
-)
+) {
+
+    /**
+     * @return the all available legends.
+     *
+     * NOTE: New legends must be manually added here. This was done to avoid using kotlin reflection library(+2.5mb to app size)
+     */
+    fun getLegends(): List<Legend> = listOf(
+        ash,
+        bangalore,
+        bloodhound,
+        caustic,
+        crypto,
+        fuse,
+        gibraltar,
+        horizon,
+        lifeline,
+        loba,
+        madMaggie,
+        newcastle,
+        octane,
+        pathfinder,
+        rampart,
+        revenant,
+        seer,
+        valkyrie,
+        wattson
+    )
+}

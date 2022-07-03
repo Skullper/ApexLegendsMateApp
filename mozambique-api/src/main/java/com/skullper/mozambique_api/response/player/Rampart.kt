@@ -5,6 +5,7 @@ import com.squareup.moshi.JsonClass
 
 @JsonClass(generateAdapter = true)
 data class Rampart(
-    val data: List<Data>,
-    @Json(name = "ImgAssets") val imgAssets: ImgAssets
-)
+    override val data: List<Data>?,
+    override val gameInfo: GameInfo?,
+    @Json(name = "ImgAssets") override val assets: ImgAssets,
+) : Legend

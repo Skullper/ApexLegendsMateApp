@@ -1,5 +1,6 @@
 package com.skullper.mozambique_api.response.player
 
+import com.squareup.moshi.Json
 import com.squareup.moshi.JsonClass
 
 @JsonClass(generateAdapter = true)
@@ -8,7 +9,7 @@ data class Global(
     val avatar: String,
     val badges: List<LegendBadge>,
     val bans: Bans,
-    val battlepass: Battlepass,
+    @Json(name = "battlepass") val battlePass: BattlePass,
     val internalUpdateCount: Int,
     val level: Int,
     val name: String,

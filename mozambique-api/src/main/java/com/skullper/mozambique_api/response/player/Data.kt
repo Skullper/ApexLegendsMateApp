@@ -11,7 +11,8 @@ data class Data(
     val name: String,
     val rank: Rank,
     @NotCalculatedRank
-    @Json(name = "rankPlatformSpecific") val platformSpecificRank: RankPlatformSpecific,
+    @Json(name = "rankPlatformSpecific")
+    val platformSpecificRank: RankPlatformSpecific,
     val value: Int
 )
 //@formatter:on
