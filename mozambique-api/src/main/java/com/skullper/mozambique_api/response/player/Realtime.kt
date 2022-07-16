@@ -7,7 +7,7 @@ data class Realtime(
     val canJoin: Int,
     val currentState: String,
     val currentStateAsText: String,
-    val currentStateSinceTimestamp: Int,
+    val currentStateSinceTimestamp: Long,
     val isInGame: Int,
     val isOnline: Int,
     val lobbyState: String,

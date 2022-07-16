@@ -6,14 +6,13 @@ import android.view.Menu
 import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.WindowCompat
+import com.skullper.account_repo.AccountRepository
+import com.skullper.account_repo.data.PlatformType
 import com.skullper.apexlegendsmateapp.databinding.ActivityMainBinding
-import com.skullper.player_repo.PlayerRepository
 import kotlinx.coroutines.runBlocking
-import org.koin.android.ext.android.inject
+import org.koin.android.ext.android.get
 
 class MainActivity : AppCompatActivity() {
-
-    private val apiHelper: PlayerRepository by inject()
 
     private lateinit var binding: ActivityMainBinding
 
@@ -28,9 +27,12 @@ class MainActivity : AppCompatActivity() {
 
         binding.fab.setOnClickListener { _ ->
             runBlocking {
-                val player = apiHelper.getPlayerInfo("SkuIIper")
-                Log.e("TAGA", "Player name: ${player.data.name} | Status: ${player.status.isOnline}")
-                Log.e("TAGA", "SelectedLegend: ${player.legends.find { it.selected != null }}")
+                val player = get<AccountRepository>()
+                val info = player.getAccountInfo("SkuIIper", PlatformType.PC)
+                Log.e("TAGA", "Info: $info \n\n\n")
+                player.getLegendsInfo().forEach {
+                    Log.e("TAGA", "Legend: $it")
+                }
             }
         }
     }

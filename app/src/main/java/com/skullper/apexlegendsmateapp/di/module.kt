@@ -1,8 +1,8 @@
 package com.skullper.apexlegendsmateapp.di
 
-import com.skullper.player_repo.di.playerRepoModule
+import com.skullper.account_repo.di.accountRepoModule
 import org.koin.dsl.module
 
 val appModule = module {
-    includes(playerRepoModule)
+    includes(accountRepoModule)
 }

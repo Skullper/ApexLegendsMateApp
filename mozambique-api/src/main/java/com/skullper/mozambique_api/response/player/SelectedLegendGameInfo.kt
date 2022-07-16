@@ -4,7 +4,7 @@ import com.squareup.moshi.JsonClass
 
 @JsonClass(generateAdapter = true)
 data class SelectedLegendGameInfo(
-    val badges: List<AccountBadge>,
+    val badges: List<Badge>,
     val frame: String,
     val frameRarity: String,
     val intro: String,

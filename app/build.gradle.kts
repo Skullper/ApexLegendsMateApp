@@ -5,12 +5,18 @@ plugins {
 
 android {
 
-    compileSdk = deps.versions.targetSdk.get().toInt()
+    compileSdk = deps.versions.targetSdk
+        .get()
+        .toInt()
 
     defaultConfig {
         applicationId = "com.skullper.apexlegendsmateapp"
-        minSdk = deps.versions.minSdk.get().toInt()
-        targetSdk = deps.versions.targetSdk.get().toInt()
+        minSdk = deps.versions.minSdk
+            .get()
+            .toInt()
+        targetSdk = deps.versions.targetSdk
+            .get()
+            .toInt()
         versionCode = 1
         versionName = "1.0"
 
@@ -37,7 +43,7 @@ android {
 
 dependencies {
 
-    implementation(project(":player-repo"))
+    implementation(project(":account-repo"))
 
     implementation(deps.androidx.core)
     implementation(deps.appcompat)
